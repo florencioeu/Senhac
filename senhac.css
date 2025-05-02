@@ -1,3 +1,4 @@
+/* Senhac.css */
 /* Resetando alguns estilos padrão */
 * {
     margin: 0;
@@ -9,7 +10,7 @@
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     }
-   
+
     /* Cabeçalho */
     header {
     background-color: #004a8d;
@@ -17,16 +18,16 @@
     padding: 20px 0;
     text-align: center;
     }
-       
+
     header .logo h1 {
     font-size: 2.5em;
     margin-bottom: 10px;
     }
-       
+
     header .logo p {
     font-size: 1.2em;
     }
-       
+
     /* Barra de navegação */
     nav {
     background-color: #f7941e;
@@ -35,24 +36,24 @@
     justify-content: center;
     align-items: center;
     }
-       
+
     nav ul {
     list-style-type: none;
     text-align: center;
     }
-       
+
     nav ul li {
     display: inline;
     margin: 0 20px;
     }
-       
+
     nav ul li a {
     color: white;
     text-decoration: none;
     font-size: 1.1em;
     padding: 10px 15px;
     }
- 
+
     .cart-icon {
     color: white; /* Ajuste a cor conforme necessário */
     margin-left: 20px; /* Espaçamento entre o menu e o ícone */
@@ -60,32 +61,32 @@
     font-size: 1.1em;
     padding: 10px 15px;
     }
- 
+
     .cart-icon:hover {
     background-color: #fdc280;
     color: rgb(255, 255, 255);
     border-radius: 5px;
     }
-       
+
     nav ul li a:hover {
     background-color: #fdc280;
     color: rgb(255, 255, 255);
     border-radius: 5px;
     }
-       
+
     /* Barra de pesquisa */
     .search-bar {
     text-align: center;
     margin-top: 20px;
     }
-       
+
     .search-bar input {
     padding: 10px;
     width: 50%;
     border-radius: 5px;
     border: 1px solid #ccc;
     }
-       
+
     .search-bar button {
     padding: 10px;
     background-color: #004a8d;
@@ -94,11 +95,11 @@
     border-radius: 5px;
     cursor: pointer;
     }
-       
+
     .search-bar button:hover {
-    background-color: #0400ff;
+    background-color: #004d26;
     }
-       
+
     /* Estilos do container de produtos */
     .container {
     display: flex;
@@ -106,7 +107,7 @@
     justify-content: space-between;
     padding: 20px;
     }
-       
+
     .product {
     background-color: white;
     padding: 15px;
@@ -116,24 +117,24 @@
     text-align: center;
     margin-bottom: 20px;
     }
-       
+
     .product img {
     width: 50%;
     height: auto;
     border-radius: 5px;
     }
-       
+
     .product h3 {
     font-size: 1.2em;
     margin: 10px 0;
     }
-       
+
     .product p {
     font-size: 1em;
     color: #555;
     margin-bottom: 15px;
     }
-       
+
     .product button {
     padding: 10px;
     background-color: #f7941e;
@@ -142,11 +143,11 @@
     border-radius: 5px;
     cursor: pointer;
     }
-       
+
     .product button:hover {
     background-color: #fdc280;
     }
-       
+
     /* Rodapé */
     footer {
     background-color: #222;
