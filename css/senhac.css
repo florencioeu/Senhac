@@ -6,7 +6,7 @@
   }
   body{
     font-family:'Segoe UI',sans-serif;
-    background:#f9fafb;
+    background: #1e293b;
   }
   
   /* ====================  CABEÇALHO  ==================== */
@@ -53,7 +53,7 @@
   .menu-user-left a,
   .menu-left a,
   .menu-cart-right a{
-    color:#fff;
+    color:#f7941e;;
     text-decoration:none;
     font-size:1.05em;
     padding:10px;
