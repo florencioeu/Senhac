@@ -17,75 +17,87 @@
 
 <body>
 
-  <!-- ::::::::::::::::::::::  CABEÇALHO  :::::::::::::::::::::: -->
-  <header>
-    <nav>
-      <div class="menu-container">
+<!-- :::::::::::::::::::::: CABEÇALHO :::::::::::::::::::::: -->
+<header>
+  <nav>
+    <div class="menu-container">
 
-        <!-- logo -->
-        <div class="logo-nav">
-          <img src="imagens/senhac.png" alt="Logo Senhac">
-        </div>
-
-        <!-- botão hambúrguer -->
-        <button class="menu-toggle" aria-label="Abrir menu"
-                onclick="document.querySelector('.nav-container').classList.toggle('show')">
-          <i class="fa-solid fa-bars"></i>
-        </button>
-
-        <!-- menus e ícones -->
-        <div class="nav-container">
-          <ul class="menu-user-left">
-            <li><a href="#" aria-label="Perfil do usuário">
-              <i class="fa-solid fa-circle-user"></i></a></li>
-          </ul>
-
-          <ul class="menu-left">
-            <li><a href="Sobrenos.html">Início</a></li>
-            <li><a href="Bebidas.html">Bebidas</a></li>
-            <li><a href="Lanches.html">Lanches</a></li>
-            <li><a href="Doces.html">Doces</a></li>
-            <li><a href="Ofertas.html">Ofertas</a></li>
-            <li><a href="Todos.html">Todos os Itens</a></li>
-          </ul>
-
-          <ul class="menu-cart-right">
-            <li><a href="#" aria-label="Carrinho de compras">
-              <i class="fa-solid fa-cart-shopping"></i></a></li>
-          </ul>
-        </div>
+      <!-- logo -->
+      <div class="logo-nav">
+        <img src="imagens/senhac I.png" alt="Logo Senhac">
       </div>
-    </nav>
-  </header>
 
-  <!-- barra de pesquisa -->
-  <section class="search-bar">
-    <input type="text" placeholder="O que você está procurando?">
-    <button>Buscar</button>
-  </section>
+      <!-- barra de busca e ícones à direita -->
+      <div class="header-right">
+        <div class="search-wrapper">
+          <input type="text" placeholder="O que você está procurando?">
+        </div>
+        <button class="icon-btn">
+          <i class="fa-solid fa-circle-user"></i>
+        </button>
+        <button class="icon-btn" id="openCart">
+          <i class="fa-solid fa-cart-shopping"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<!-- faixa inferior opcional -->
+<div class="info-bar">
+  <ul class="menu-center">
+    <li><a href="Sobrenos.html">Início</a></li>
+    <li><a href="Bebidas.html">Bebidas</a></li>
+    <li><a href="Lanches.html">Lanches</a></li>
+    <li><a href="Doces.html">Doces</a></li>
+    <li><a href="Ofertas.html">Ofertas</a></li>
+    <li><a href="Todos.html">Todos os Itens</a></li>
+  </ul>
+</div>
 
 <!-- ::::::::::::::::::::::  PRODUTOS  :::::::::::::::::::::: -->
 <main class="container">
 
-<article class="product">
-  <img src="imagens/trento 2.jpg" alt="Produto 4">
-  <h3>Trento duo</h3>
-  <p>R$ 3,00</p>
-  <button>Adicionar ao carrinho</button>
-</article>
-
-<article class="product">
-  <img src="imagens/trento limao.jpg" alt="Produto 4">
-  <h3>Trento torta de limão</h3>
-  <p>R$ 3,00</p>
-  <button>Adicionar ao carrinho</button>
-</article>
-
-</main>
-
+  <article class="product">
+    <img src="imagens/trento 2.jpg" alt="Trento Duo">
+    <h3>Trento Duo</h3>
+    <p>R$ 3,00</p>
+    <button>Adicionar ao carrinho</button>
+  </article>
+  
+  <article class="product">
+    <img src="imagens/trento limao.jpg" alt="Trento Torta de Limão">
+    <h3>Trento Torta de Limão</h3>
+    <p>R$ 3,00</p>
+    <button>Adicionar ao carrinho</button>
+  </article>
+  
+  <article class="product">
+    <img src="imagens/trentochocolate.png" alt="Trento Chocolate">
+    <h3>Trento Chocolate</h3>
+    <p>R$ 3,00</p>
+    <button>Adicionar ao carrinho</button>
+  </article>
+  
+  <article class="product">
+    <img src="imagens/trakinas.png" alt="Trakinas Chocolate">
+    <h3>Trakinas Chocolate</h3>
+    <p>R$ 4,00</p>
+    <button>Adicionar ao carrinho</button>
+  </article>
+  
+  <article class="product">
+    <img src="imagens/trident.png" alt="Chiclete Trident Blueberry">
+    <h3>Chiclete Trident Blueberry</h3>
+    <p>R$ 4,00</p>
+    <button>Adicionar ao carrinho</button>
+  </article>
+  
+  </main>
 <!-- ::::::::::::::::::::::  RODAPÉ  :::::::::::::::::::::: -->
-<footer>
-    <p>©2025 Senac. Todos os direitos reservados.</p>
+<footer class="text-center text-sm py-4 bg-slate-900 text-white"
+style="position: fixed; bottom: 0; width: 100%;">
+  ©2025 Senac. Todos os direitos reservados.
 </footer>
   
 </body>

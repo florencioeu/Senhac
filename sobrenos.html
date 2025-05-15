@@ -3,81 +3,97 @@
 <head>
   <meta charset="UTF-8">
   <title>Sobre Nós</title>
-  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="css/sobrenos.css">
-  <!-- Font‑Awesome para os ícones -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
-<body class="bg-white text-gray-800">
+<body class="light-theme">
 
-  <!-- Barra superior -->
-  <div class="flex items-center justify-between px-6 py-4 border-b bg-slate-900">
-    <img src="imagens/senhac.png" alt="Logo Senhac" class="h-10">
-    <div class="flex items-center gap-4">
-      <input type="text" placeholder="O que você está procurando?" class="border border-gray-300 rounded px-3 py-2 w-80 focus:outline-none focus:ring-2 focus:ring-orange-400">
-      <button class="bg-orange-400 text-white px-4 py-2 rounded hover:bg-orange-500 transition">
-        <a href="#" aria-label="Perfil do usuário">
-          <i class="fa-solid fa-circle-user text-xl"></i>
-        </a>
+  <div id="cartSidebar">
+    <div class="cart-header">
+      <h2>Seu Carrinho</h2>
+      <button id="closeCart" aria-label="Fechar carrinho">
+        <i class="fas fa-times"></i>
       </button>
+    </div>
+    <div class="cart-body">
+      <p>Seu carrinho está vazio.</p>
     </div>
   </div>
 
-  <!-- Faixa de aviso -->
-  <div class="text-white text-center py-2 text-sm bg-orange-400">
+  <div id="cartOverlay"></div>
+
+  <header class="top-bar">
+    <img src="imagens/senhac I.png" alt="Logo Senhac">
+    <div class="search-user">
+      <input type="text" placeholder="O que você está procurando?">
+      <button class="user-btn" aria-label="Perfil do usuário">
+        <i class="fa-solid fa-circle-user"></i>
+      </button>
+      <button id="openCart" class="cart-btn" aria-label="Abrir carrinho">
+        <i class="fas fa-shopping-cart"></i>
+      </button>
+    </div>
+  </header>
+
+  <div class="faixa-aviso">
     ✨ O Senhac é a plataforma que facilita o seu pedido diretamente da máquina de alimentos da instituição. ✨
   </div>
 
-  <!-- Banner principal -->
-  <div class="relative">
-    <img src="imagens/banner2.png" alt="Banner" class="w-full h-[400px] object-cover">
-    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-start px-12">
-      <div class="text-white">
-        <h2 class="text-4xl font-bold mb-2">Senhac.<br>Rápido, prático e seguro.</h2>
-        <p class="text-lg">Você pode escolher entre lanches, bebidas e outros produtos!</p>
-      </div>
+  <section class="banner">
+    <img src="imagens/banner2.png" alt="Banner">
+    <div class="banner-overlay">
+      <h2>Senhac.<br>Rápido, prático e seguro.</h2>
+      <p>Você pode escolher entre lanches, bebidas e outros produtos!</p>
     </div>
-  </div>
+  </section>
 
-  <!-- Categorias -->
-  <div class="grid grid-cols-2 md:grid-cols-5 gap-4 p-6">
-    <!-- Categoria Template -->
-    <div class="rounded-lg text-center bg-orange-100 p-4 shadow hover:shadow-lg transition hover:bg-orange-200">
-      <a href="ofertas.html">
-        <img src="imagens/ofertas.png" class="mx-auto mb-2 w-20 h-20 object-contain" alt="Ofertas">
-        <p class="font-semibold text-gray-900">Ofertas do Dia</p>
-      </a>
-    </div>
-    <div class="rounded-lg text-center bg-orange-100 p-4 shadow hover:shadow-lg transition hover:bg-orange-200">
-      <a href="Bebidas.html">
-        <img src="imagens/bebidas.png" class="mx-auto mb-2 w-20 h-20 object-contain" alt="Bebidas">
-        <p class="font-semibold text-gray-900">Bebidas</p>
-      </a>
-    </div>
-    <div class="rounded-lg text-center bg-orange-100 p-4 shadow hover:shadow-lg transition hover:bg-orange-200">
-      <a href="Doces.html">
-        <img src="imagens/doces.png" class="mx-auto mb-2 w-20 h-20 object-contain" alt="Doces">
-        <p class="font-semibold text-gray-900">Doces</p>
-      </a>
-    </div>
-    <div class="rounded-lg text-center bg-orange-100 p-4 shadow hover:shadow-lg transition hover:bg-orange-200">
-      <a href="Lanches.html">
-        <img src="imagens/lanches.png" class="mx-auto mb-2 w-20 h-20 object-contain" alt="Lanches">
-        <p class="font-semibold text-gray-900">Lanches</p>
-      </a>
-    </div>
-    <div class="rounded-lg text-center bg-orange-100 p-4 shadow hover:shadow-lg transition hover:bg-orange-200">
-      <a href="Todos.html">
-        <img src="imagens/todos os itens.png" class="mx-auto mb-2 w-20 h-20 object-contain" alt="Todos os Itens">
-        <p class="font-semibold text-gray-900">Todos os Itens</p>
-      </a>
-    </div>
-  </div>
+  <main class="categorias">
+    <a href="ofertas.html" class="categoria">
+      <img src="imagens/ofertas.png" alt="Ofertas">
+      <p>Ofertas do Dia</p>
+    </a>
+    <a href="Bebidas.html" class="categoria">
+      <img src="imagens/bebidas.png" alt="Bebidas">
+      <p>Bebidas</p>
+    </a>
+    <a href="Doces.html" class="categoria">
+      <img src="imagens/doces.png" alt="Doces">
+      <p>Doces</p>
+    </a>
+    <a href="Lanches.html" class="categoria">
+      <img src="imagens/lanches.png" alt="Lanches">
+      <p>Lanches</p>
+    </a>
+    <a href="Todos.html" class="categoria">
+      <img src="imagens/todos os itens.png" alt="Todos os Itens">
+      <p>Todos os Itens</p>
+    </a>
+  </main>
 
-  <!-- Rodapé -->
-  <footer class="text-center text-sm py-4 bg-slate-900 text-white">
+  <footer class="rodape">
     ©2025 Senac. Todos os direitos reservados.
   </footer>
 
+  <script>
+    const openCartBtn = document.getElementById('openCart');
+    const closeCartBtn = document.getElementById('closeCart');
+    const cartSidebar = document.getElementById('cartSidebar');
+    const cartOverlay = document.getElementById('cartOverlay');
+
+    openCartBtn.addEventListener('click', () => {
+      cartSidebar.classList.add('active');
+      cartOverlay.classList.add('active');
+    });
+
+    closeCartBtn.addEventListener('click', () => {
+      cartSidebar.classList.remove('active');
+      cartOverlay.classList.remove('active');
+    });
+
+    cartOverlay.addEventListener('click', () => {
+      cartSidebar.classList.remove('active');
+      cartOverlay.classList.remove('active');
+    });
+  </script>
 </body>
 </html>
