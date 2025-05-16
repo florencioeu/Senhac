@@ -33,7 +33,7 @@
 
 
 <!-- :::::::::::::::::::::: CABEÇALHO :::::::::::::::::::::: -->
-<header>
+<header style="position: fixed; top: 0px; width: 100%; z-index: 1000;">
   <nav>
     <div class="menu-container">
 
@@ -44,14 +44,12 @@
 
       <!-- barra de busca e ícones à direita -->
       <div class="header-right">
-        <div class="search-wrapper">
-          <input type="text" placeholder="O que você está procurando?">
-        </div>
-        <button class="icon-btn">
-          <i class="fa-solid fa-circle-user"></i>
+        <input type="text" placeholder="O que você está procurando?">
+        <button class="icon-button" title="Perfil">
+          <i class="fas fa-user"></i>
         </button>
-        <button class="icon-btn" id="openCart">
-          <i class="fa-solid fa-cart-shopping"></i>
+        <button class="icon-button" title="Carrinho">
+          <i class="fas fa-shopping-cart"></i>
         </button>
       </div>
     </div>
@@ -59,7 +57,7 @@
 </header>
 
 <!-- faixa inferior opcional -->
-<div class="info-bar">
+<div class="info-bar" style="position: fixed; top: 76px; width: 100%; z-index: 1000;">
   <ul class="menu-center">
     <li><a href="Sobrenos.html">Início</a></li>
     <li><a href="Bebidas.html">Bebidas</a></li>
@@ -71,7 +69,7 @@
 </div>
 
 <!-- ::::::::::::::::::::::  PRODUTOS  :::::::::::::::::::::: -->
-<main class="container">
+<main class="container" style="padding-top: 116px;">
 
   <article class="product">
     <img src="imagens/trento 2.jpg" alt="Trento Duo">
