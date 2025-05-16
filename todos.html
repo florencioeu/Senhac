@@ -1,4 +1,4 @@
-<!-- Senhac.html -->
+<!-- Todos.html -->
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -15,10 +15,25 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
 
-<body>
+<body class="light-theme">
+
+  <div id="cartSidebar">
+    <div class="cart-header">
+      <h2>Seu Carrinho</h2>
+      <button id="closeCart" aria-label="Fechar carrinho">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <div class="cart-body">
+      <p>Seu carrinho está vazio.</p>
+    </div>
+  </div>
+
+  <div id="cartOverlay"></div>
+
 
 <!-- :::::::::::::::::::::: CABEÇALHO :::::::::::::::::::::: -->
-<header>
+<header style="position: fixed; top: 0; width: 100%; z-index: 1000;">
   <nav>
     <div class="menu-container">
 
@@ -29,14 +44,12 @@
 
       <!-- barra de busca e ícones à direita -->
       <div class="header-right">
-        <div class="search-wrapper">
-          <input type="text" placeholder="O que você está procurando?">
-        </div>
-        <button class="icon-btn">
-          <i class="fa-solid fa-circle-user"></i>
+        <input type="text" placeholder="O que você está procurando?">
+        <button class="icon-button" title="Perfil">
+          <i class="fas fa-user"></i>
         </button>
-        <button class="icon-btn" id="openCart">
-          <i class="fa-solid fa-cart-shopping"></i>
+        <button class="icon-button" title="Carrinho">
+          <i class="fas fa-shopping-cart"></i>
         </button>
       </div>
     </div>
@@ -44,7 +57,7 @@
 </header>
 
 <!-- faixa inferior opcional -->
-<div class="info-bar">
+<div class="info-bar" style="position: fixed; top: 76px; width: 100%; z-index: 1000;">
   <ul class="menu-center">
     <li><a href="Sobrenos.html">Início</a></li>
     <li><a href="Bebidas.html">Bebidas</a></li>
@@ -55,10 +68,8 @@
   </ul>
 </div>
 
-
 <!-- ::::::::::::::::::::::  PRODUTOS  :::::::::::::::::::::: -->
-<!-- ::::::::::::::::::::::  PRODUTOS  :::::::::::::::::::::: -->
-<main class="container">
+<main class="container"  style="padding-top: 116px;">
 
   <article class="product">
     <img src="imagens/coca cola 2.jpg" alt="Refrigerante Coca-Cola Lata (350ml)">
@@ -221,6 +232,28 @@
 style="position: fixed; bottom: 0; width: 100%;">
   ©2025 Senac. Todos os direitos reservados.
 </footer>
+
+<script>
+  const openCartBtn = document.getElementById('openCart');
+  const closeCartBtn = document.getElementById('closeCart');
+  const cartSidebar = document.getElementById('cartSidebar');
+  const cartOverlay = document.getElementById('cartOverlay');
+
+  openCartBtn.addEventListener('click', () => {
+    cartSidebar.classList.add('active');
+    cartOverlay.classList.add('active');
+  });
+
+  closeCartBtn.addEventListener('click', () => {
+    cartSidebar.classList.remove('active');
+    cartOverlay.classList.remove('active');
+  });
+
+  cartOverlay.addEventListener('click', () => {
+    cartSidebar.classList.remove('active');
+    cartOverlay.classList.remove('active');
+  });
+</script>
   
 </body>
 </html>

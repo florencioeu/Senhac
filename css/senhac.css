@@ -1,189 +1,256 @@
-/* ====================  RESET  ==================== */
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-  }
-  body{
-    font-family:'Segoe UI',sans-serif;
-    background: #F7F9FC;
-  }
-  
-  /* ====================  CABEÇALHO  ==================== */
-  header{
-    background:#1e293b;
-    color:#fff;
-  }
-  nav{
-    background:#1e293b;              
-  }
-  .menu-container{
-    max-width:1200px;
-    margin:0 auto;
-    padding:10px 20px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    flex-wrap:wrap;
-    gap:10px;
-  }
-  /* logo */
-  .logo-nav img{
-    height:55px;
-  }
-  /* botão hambúrguer */
-  .menu-toggle{
-    display:none;
-    background:none;
-    border:none;
-    font-size:1.6rem;
-    color:#fff;
-    cursor:pointer;
-  }
-  
-  /* ----- listas de navegação ----- */
-  .menu-user-left,
-  .menu-left,
-  .menu-cart-right{
-    list-style:none;
-    display:flex;
-    align-items:center;
-    gap:15px;
-  }
-  .menu-user-left a,
-  .menu-left a,
-  .menu-cart-right a{
-    color:#f7941e;;
-    text-decoration:none;
-    font-size:1.05em;
-    padding:10px;
-    transition:background .3s;
-  }
-  .menu-user-left a:hover,
-  .menu-left a:hover,
-  .menu-cart-right a:hover{
-    background:#fdc280;
-    border-radius:5px;
-  }
-  
-  /* container das listas (para colapsar no mobile) */
-  .nav-container{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    flex-grow:1;
-    flex-wrap:wrap;
-  }
-  
-  /* ====================  BARRA DE BUSCA  ==================== */
-  .search-bar{
-    width:100%;
-    display:flex;
-    justify-content:center;
-    padding:10px 0;
-    background:#1e293b;
-  }
-  .search-bar input{
-    width:60%;
-    padding:10px;
-    border:1px solid #ccc;
-    border-radius:5px 0 0 5px;
-    outline:none;
-  }
-  .search-bar button{
-    padding:10px 20px;
-    background:#f7941e;
-    color:#fff;
-    border:none;
-    border-radius:0 5px 5px 0;
-    cursor:pointer;
-  }
-  .search-bar button:hover{
-    background:#fdc280;
-  }
-  
-  /* ====================  PRODUTOS  ==================== */
-  .container {
-    display: flex;
+/* ==================== RESET ==================== */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  color: #1f2937;
+  background-color: #ffffff;
+}
+
+/* ==================== CABEÇALHO ==================== */
+.menu-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0f172a;
+  padding: 1rem 1.5rem;
+  flex-wrap: nowrap;
+  gap: 1rem;
+}
+
+.logo-nav img {
+  height: 40px;
+}
+
+/* botão hambúrguer (opcional para futuro) */
+.menu-toggle {
+  display: none;
+}
+
+/* header direito */
+.header-right {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.header-right input {
+  padding: 0.5rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 5px;
+  width: 320px;
+  max-width: 100%;
+}
+
+.header-right button {
+  padding: 0.5rem 0.75rem;
+  background-color: #fb923c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.header-right button:hover {
+  background-color: #f97316;
+}
+
+/* ==================== BARRA DE NAVEGAÇÃO ==================== */
+.info-bar {
+  background-color: #fb923c;
+  color: white;
+  text-align: center;
+  padding: 0.5rem;
+  font-size: 0.9rem;
+  z-index: 999;
+}
+
+.menu-center {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-center a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.05em;
+  padding: 10px;
+  transition: background 0.3s;
+}
+
+.menu-center a:hover {
+  background: #fdc280;
+  border-radius: 5px;
+}
+
+/* ==================== PRODUTOS ==================== */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  justify-content: center;
+}
+
+.product {
+  width: 300px;
+  background: #fff;
+  padding: 15px;
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, .1);
+  box-sizing: border-box;
+}
+
+.product img {
+  width: 50%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.product h3 {
+  color: #1f2937;
+  font-size: 1.2em;
+  margin: 10px 0;
+}
+
+.product p {
+  color: #4B5563;
+  margin-bottom: 15px;
+}
+
+.product button {
+  padding: 10px;
+  background: #f7941e;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.product button:hover {
+  background: #fdc280;
+}
+
+/* ==================== CARRINHO ==================== */
+#cartSidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 320px;
+  height: 100%;
+  background-color: white;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  z-index: 50;
+}
+
+#cartSidebar.active {
+  transform: translateX(0%);
+}
+
+#cartOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  z-index: 40;
+}
+
+#cartOverlay.active {
+  display: block;
+}
+
+.cart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.cart-body {
+  padding: 1rem;
+  color: #6b7280;
+}
+
+/* ==================== RODAPÉ ==================== */
+footer {
+  text-align: center;
+  font-size: 0.875rem;
+  background-color: #0f172a;
+  color: white;
+  padding: 1rem;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+/* ==================== RESPONSIVO ==================== */
+@media (max-width: 768px) {
+  .menu-container {
+    flex-direction: row;
     flex-wrap: wrap;
-    gap: 20px;
-    padding: 20px;
-    justify-content: center; /* centraliza os produtos se sobrarem colunas */
+    align-items: center;
+    justify-content: space-between;
   }
-  
-  .product {
-    width: 300px; /* Tamanho fixo */
-    background: #fff;
-    padding: 15px;
-    border-radius: 5px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, .1);
-    box-sizing: border-box;
+
+  .header-right {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 0.5rem;
+    width: auto;
+    margin-top: 0;
   }
-  
-  .product img {
-    width: 50%;
-    height: auto;
-    border-radius: 5px;
+
+  .header-right input {
+    width: 100px;
   }
-  
-  .product h3 {
-    color: #1f2937;
-    font-size: 1.2em;
-    margin: 10px 0;
+
+  .header-right button {
+    width: auto;
   }
-  
-  .product p {
-    color: #4B5563;
-    margin-bottom: 15px;
+
+  .icon-button {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    font-size: 1rem;
   }
-  
-  .product button {
+
+  .icon-button i {
+    margin: 0;
+  }
+
+  .menu-center {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .container {
     padding: 10px;
-    background: #f7941e;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    gap: 15px;
   }
-  
-  .product button:hover {
-    background: #fdc280;
+
+  .product {
+    width: 100%;
+    max-width: 100%;
   }
-  
-  /* Responsivo para telas menores */
-  @media (max-width: 600px) {
-    .product {
-      width: 100%; /* em celulares ocupa largura total */
-    }
+
+  footer {
+    font-size: 0.75rem;
+    padding: 0.75rem;
   }
-  
-  
-  /* ====================  RODAPÉ  ==================== */
-  footer{
-    background:#222;
-    color:#fff;
-    padding:10px 0;
-    text-align:center;
-    margin-top:30px;
-  }
-  
-  /* ====================  RESPONSIVO  ==================== */
-  @media (max-width:768px){
-    .menu-toggle{display:block;}
-  
-    /* esconde nav até clicar */
-    .nav-container{display:none;flex-direction:column;width:100%;}
-    .nav-container.show{display:flex;}
-  
-    .menu-user-left,
-    .menu-left,
-    .menu-cart-right{
-      flex-direction:column;
-      align-items:flex-start;
-      width:100%;
-    }
-    .search-bar input{width:70%;}
-    .product{width:100%;}
-  }
-  
+}

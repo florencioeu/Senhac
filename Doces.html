@@ -15,7 +15,22 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
 
-<body>
+<body class="light-theme">
+
+  <div id="cartSidebar">
+    <div class="cart-header">
+      <h2>Seu Carrinho</h2>
+      <button id="closeCart" aria-label="Fechar carrinho">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <div class="cart-body">
+      <p>Seu carrinho está vazio.</p>
+    </div>
+  </div>
+
+  <div id="cartOverlay"></div>
+
 
 <!-- :::::::::::::::::::::: CABEÇALHO :::::::::::::::::::::: -->
 <header>
@@ -99,6 +114,28 @@
 style="position: fixed; bottom: 0; width: 100%;">
   ©2025 Senac. Todos os direitos reservados.
 </footer>
+
+<script>
+  const openCartBtn = document.getElementById('openCart');
+  const closeCartBtn = document.getElementById('closeCart');
+  const cartSidebar = document.getElementById('cartSidebar');
+  const cartOverlay = document.getElementById('cartOverlay');
+
+  openCartBtn.addEventListener('click', () => {
+    cartSidebar.classList.add('active');
+    cartOverlay.classList.add('active');
+  });
+
+  closeCartBtn.addEventListener('click', () => {
+    cartSidebar.classList.remove('active');
+    cartOverlay.classList.remove('active');
+  });
+
+  cartOverlay.addEventListener('click', () => {
+    cartSidebar.classList.remove('active');
+    cartOverlay.classList.remove('active');
+  });
+</script>
   
 </body>
 </html>
