@@ -33,7 +33,7 @@
 
 
 <!-- :::::::::::::::::::::: CABEÇALHO :::::::::::::::::::::: -->
-<header style="position: fixed; top: 0px; width: 100%; z-index: 1000;">
+<header id="header" style="position: fixed; top: 0; width: 100%; z-index: 1000">
   <nav>
     <div class="menu-container">
 
@@ -48,7 +48,7 @@
         <button class="icon-button" title="Perfil">
           <i class="fas fa-user"></i>
         </button>
-        <button class="icon-button" title="Carrinho">
+        <button class="icon-button" id="openCart" title="Carrinho">
           <i class="fas fa-shopping-cart"></i>
         </button>
       </div>
@@ -57,7 +57,7 @@
 </header>
 
 <!-- faixa inferior opcional -->
-<div class="info-bar" style="position: fixed; top: 76px; width: 100%; z-index: 1000;">
+<div id="infoBar" class="info-bar" style="position: fixed; top: 76px; width: 100%; z-index: 1000">
   <ul class="menu-center">
     <li><a href="Sobrenos.html">Início</a></li>
     <li><a href="Bebidas.html">Bebidas</a></li>
@@ -69,7 +69,7 @@
 </div> 
 
 <!-- ::::::::::::::::::::::  PRODUTOS  :::::::::::::::::::::: -->
-<main class="container" style="padding-top: 116px;">
+<main id="page-wrapper" class="container" style="padding-top: 116px;">
 
   <article class="product">
     <img src="imagens/san.jpg" alt="Lanche Pão de Forma Presunto e Queijo">
@@ -102,32 +102,55 @@
   </main>
 
 <!-- ::::::::::::::::::::::  RODAPÉ  :::::::::::::::::::::: -->
-<footer class="text-center text-sm py-4 bg-slate-900 text-white"
-style="position: fixed; bottom: 0; width: 100%;">
+<footer
+  id="footer" class="text-center text-sm py-4 bg-slate-900 text-white" style="position: fixed; bottom: 0; width: 100%">
   ©2025 Senac. Todos os direitos reservados.
-</footer>
+  </footer>
+  <script>
+    const openCartBtn = document.getElementById("openCart");
+    const closeCartBtn = document.getElementById("closeCart");
+    const cartSidebar = document.getElementById("cartSidebar");
+    const cartOverlay = document.getElementById("cartOverlay");
 
-<script>
-  const openCartBtn = document.getElementById('openCart');
-  const closeCartBtn = document.getElementById('closeCart');
-  const cartSidebar = document.getElementById('cartSidebar');
-  const cartOverlay = document.getElementById('cartOverlay');
+    openCartBtn.addEventListener("click", () => {
+      cartSidebar.classList.add("active");
+      cartOverlay.classList.add("active");
+    });
 
-  openCartBtn.addEventListener('click', () => {
-    cartSidebar.classList.add('active');
-    cartOverlay.classList.add('active');
-  });
+    closeCartBtn.addEventListener("click", () => {
+      cartSidebar.classList.remove("active");
+      cartOverlay.classList.remove("active");
+    });
 
-  closeCartBtn.addEventListener('click', () => {
-    cartSidebar.classList.remove('active');
-    cartOverlay.classList.remove('active');
-  });
+    cartOverlay.addEventListener("click", () => {
+      cartSidebar.classList.remove("active");
+      cartOverlay.classList.remove("active");
+    });
 
-  cartOverlay.addEventListener('click', () => {
-    cartSidebar.classList.remove('active');
-    cartOverlay.classList.remove('active');
-  });
-</script>
+    function ajustarEspacamento() {
+      const header = document.getElementById("header");
+      const infoBar = document.getElementById("infoBar");
+      const footer = document.getElementById("footer");
+      const pageWrapper = document.getElementById("page-wrapper");
 
+      const alturaHeader = header ? header.offsetHeight : 0;
+      const alturaInfoBar = infoBar ? infoBar.offsetHeight : 0;
+      const alturaFooter = footer ? footer.offsetHeight : 0;
+
+      // Ajusta top da infoBar para ficar logo abaixo do header
+      if (infoBar && header) {
+        infoBar.style.top = alturaHeader + "px";
+      }
+
+      // Ajusta padding top do main para evitar sobreposição
+      if (pageWrapper) {
+        pageWrapper.style.paddingTop = alturaHeader + alturaInfoBar + "px";
+        pageWrapper.style.paddingBottom = alturaFooter + "px";
+      }
+    }
+
+    window.addEventListener("load", ajustarEspacamento);
+    window.addEventListener("resize", ajustarEspacamento);
+  </script>
 </body>
 </html>
