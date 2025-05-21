@@ -144,6 +144,13 @@
 
     window.addEventListener("load", ajustarEspacamento);
     window.addEventListener("resize", ajustarEspacamento);
+
+  const menuToggle = document.querySelector('.menu-toggle');
+  const menuCenter = document.querySelector('.menu-center');
+
+  menuToggle.addEventListener('click', () => {
+    menuCenter.classList.toggle('active');
+  });
   </script>
 </body>
 </html>
