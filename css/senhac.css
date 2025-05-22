@@ -215,21 +215,24 @@ footer {
     flex-wrap: nowrap !important;
     justify-content: space-between;
     padding: 0.8rem 1rem;
+    z-index: 10000; /* garantir sobreposição do header */
   }
 
   body {
-    padding-top: 56px;
+    padding-top: 85px;
   }
 
+   /* botão hambúrguer visível */
   .menu-toggle {
     display: block;
   }
 
+  /* esconde menu-center por padrão */
   .menu-center {
     position: fixed;
     top: 56px;
     right: 0;
-    background-color: #0f172a;
+    background-color: #f7941e;
     width: 220px;
     max-height: 0;
     overflow: hidden;
@@ -240,30 +243,40 @@ footer {
     z-index: 9999;
     box-shadow: -2px 0 10px rgba(0, 0, 0, 0.5);
     border-radius: 0 0 0 8px;
-    }
+  }
 
+  /* Menu aberto */
   .menu-center.active {
     max-height: 500px;
     padding-top: 10px;
+    width: 100%;           /* ocupa toda a largura */
+    left: 0;               /* encosta à esquerda */
+    right: 0;              /* encosta à direita */
+    margin: 0 auto;        /* centraliza horizontalmente */
+    border-left: none;     /* remove borda lateral que não é mais necessária */
+    border-radius: 0;      /* remove borda arredondada se quiser bordas retas */
   }
 
+  /* Links do menu no mobile */
   .menu-center a {
     padding: 12px 20px;
-    border-bottom: 1px solid #222;
+    border-bottom: none;
     font-size: 1.1em;
   }
 
+  /* Ajuste header direito */
   .header-right {
     flex-wrap: nowrap;
     gap: 0.5rem;
   }
 
   .header-right input {
-    width: 120px;
+    width: 80px;
   }
 
-  /* Oculta a info-bar no mobile */
+  /* Esconde a info-bar no mobile */
   .info-bar {
-    display: none;
+    background-color: #0f172a;
   }
 }
+
