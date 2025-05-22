@@ -55,3 +55,19 @@
     ajustarEspacamento();
     window.addEventListener("resize", ajustarEspacamento);
   });
+
+  function switchImage(index, dotElement) {
+  const container = dotElement.closest('.product-image-container');
+  const images = container.querySelectorAll('.product-img');
+  const dots = container.querySelectorAll('.dot');
+
+  // Esconde todas as imagens
+  images.forEach(img => img.classList.remove('active'));
+
+  // Exibe a imagem selecionada
+  images[index - 1].classList.add('active');
+
+  // Atualiza os pontos (dots)
+  dots.forEach(dot => dot.classList.remove('active'));
+  dotElement.classList.add('active');
+}
