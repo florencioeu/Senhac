@@ -34,32 +34,30 @@
 
 <!-- :::::::::::::::::::::: CABEÇALHO :::::::::::::::::::::: -->
 <header id="header" style="position: fixed; top: 0; width: 100%; z-index: 1000">
-  <nav>
-    <div class="menu-container">
+    <nav>
+      <div class="menu-container">
+        <!-- logo -->
+        <div class="logo-nav">
+          <img src="imagens/senhac I.png" alt="Logo Senhac" />
+        </div>
 
-      <!-- logo -->
-      <div class="logo-nav">
-        <img src="imagens/senhac I.png" alt="Logo Senhac">
-      </div>
-
-      <!-- barra de busca e ícones à direita -->
-      <div class="header-right">
-        <input type="text" placeholder="O que você está procurando?">
-        <button class="icon-button" title="Perfil">
-          <i class="fas fa-user"></i>
-        </button>
-        <button class="icon-button" id="openCart" title="Carrinho">
-          <i class="fas fa-shopping-cart"></i>
-        </button>
+        <!-- barra de busca e ícones à direita -->
+        <div class="header-right">
+          <input type="text" placeholder="Buscar">
+          <button class="icon-button" title="Perfil" onclick="window.location.href='index2.php'">
+            <i class="fas fa-user"></i>
+          </button>
+          <button class="icon-button" id="openCart" title="Carrinho">
+            <i class="fas fa-shopping-cart"></i>
+          </button>
+        </div>
         <!-- Botão hambúrguer (visível apenas no mobile) -->
         <button class="menu-toggle icon-button" aria-label="Abrir menu">
           <i class="fas fa-bars"></i>
         </button>
       </div>
-      </div>
-    </div>
-  </nav>
-</header>
+    </nav>
+  </header>
 
 <!-- faixa inferior opcional -->
 <div id="infoBar" class="info-bar" style="position: fixed; top: 76px; width: 100%; z-index: 1000">

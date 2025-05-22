@@ -31,7 +31,7 @@ $senhausuario = $_POST['senha'];
            
 
             // Redirecionar para principal.php
-            header('location:sobrenos.php');
+            header('location:sobrenos.html');
    //         exit();
   //      }
  //   }

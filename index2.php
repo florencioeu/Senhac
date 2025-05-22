@@ -12,7 +12,7 @@ session_start(); // Inicia a sessão
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-   <link rel="stylesheet" href="login.css">
+   <link rel="stylesheet" href="css/login.css">
  
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -25,7 +25,7 @@ session_start(); // Inicia a sessão
          
         <div class="login-container">
  
-        <img src="senhac.png" width="200px" alt="Logotipo" class="logo">
+        <img src="imagens/senhac.png" width="200px" alt="Logotipo" class="logo">
        
        
        

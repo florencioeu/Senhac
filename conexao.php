@@ -1,5 +1,5 @@
 <?php
-$host = 'localhost'; // Endereço do servidor de banco de dados
+$host = '127.0.0.1'; // Endereço do servidor de banco de dados
 $db = 'senhac'; // Nome do banco de dados
 $user = 'root'; // Nome de usuário para acessar o banco de dados
 $pass = ''; // Senha do usuário do banco de dados
