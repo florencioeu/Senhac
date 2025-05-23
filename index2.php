@@ -20,14 +20,9 @@ session_start(); // Inicia a sessão
 </head>
 <body>
 <div class="container">
- 
-        <div class="centralizado">
-         
-        <div class="login-container">
- 
-        <img src="imagens/senhac.png" width="200px" alt="Logotipo" class="logo">
-       
-       
+ <div class="centralizado">
+         <div class="login-container">
+            <img src="imagens/senhac.png" width="200px" alt="Logotipo" class="logo">
        
         <form action="login.php" method="post">
             <div class="form-group">

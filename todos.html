@@ -6,7 +6,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Início</title>
-
+  <script src="JS/carrinho.js" defer></script>
+  <script src="JS/senhac.js"></script> 
+  <script src="JS/banco_pedidos.js"></script>
   <!-- CSS externo -->
   <link rel="stylesheet" href="css/senhac.css" />
 
@@ -60,183 +62,376 @@
   </header>
 
   <!-- faixa inferior opcional -->
-  <div id="infoBar" class="info-bar menu-mobile" style="position: fixed; top: 76px; width: 100%; z-index: 1000">
+  <div id="infoBar" class="info-bar" style="position: fixed; top: 76px; width: 100%; z-index: 1000">
     <ul class="menu-center">
-      <li><a href="Sobrenos.html">Início</a></li>
+      <li><a href="sobrenos.php">Início</a></li>
       <li><a href="Bebidas.html">Bebidas</a></li>
       <li><a href="Lanches.html">Lanches</a></li>
       <li><a href="Doces.html">Doces</a></li>
       <li><a href="Ofertas.html">Ofertas</a></li>
       <li><a href="Todos.html">Todos os Itens</a></li>
+      <li><a href="meus-pedidos.html">Meus Pedidos</a></li>
     </ul>
   </div>
+
+<div id="side-menu" class="side-menu">
+<div id="toggle-button" class="toggle-button" onclick="toggleMenu()">
+<span id="location-text">Sua Localização</span>
+
+<span id="arrow"><i class="fas fa-chevron-left"></i></span>
+
 
   <!-- :::::::::::::::::::::: PRODUTOS :::::::::::::::::::::: -->
   <main id="page-wrapper" class="container" style="padding-top: 116px;">
     <!-- seus artigos de produtos aqui -->
 
-    <article class="product">
-      <img src="imagens/coca cola 2.jpg" alt="Refrigerante Coca-Cola Lata (350ml)">
-      <h3>Refrigerante Coca-Cola Lata (350ml)</h3>
-      <p>R$ 3,00</p>
-      <button>Adicionar ao carrinho</button>
-    </article>
+<article class="product">
+  <div class="product-image-container">
+    <img src="imagens/coca cola 2.jpg" alt="Coca-Cola" class="product-img active" id="img1-1">
+    <img src="imagens/tabela.png" alt="Tabela Nutricional" class="product-img" id="img1-2">
+    <div class="image-switcher">
+      <span class="dot active" onclick="switchImage(1, this)"></span>
+      <span class="dot" onclick="switchImage(2, this)"></span>
+    </div>
+  </div>
+  <h3>Refrigerante Coca-Cola Lata (350ml)</h3>
+  <p>R$ 3,00</p>
+  <button>Adicionar ao carrinho</button>
+</article>
 
-    <article class="product">
-      <img src="imagens/coca cola 1.png" alt="Refrigerante Coca-Cola Zero Lata (350ml)">
-      <h3>Refrigerante Coca-Cola Zero Lata (350ml)</h3>
-      <p>R$ 3,00</p>
-      <button>Adicionar ao carrinho</button>
-    </article>
+<article class="product">
+  <div class="product-image-container">
+    <img src="imagens/coca cola 1.png" alt="Coca-Cola Zero" class="product-img active" id="img2-1">
+    <img src="imagens/tabela.png" alt="Tabela Nutricional" class="product-img" id="img2-2">
+    <div class="image-switcher">
+      <span class="dot active" onclick="switchImage(1, this)"></span>
+      <span class="dot" onclick="switchImage(2, this)"></span>
+    </div>
+  </div>
+  <h3>Refrigerante Coca-Cola Zero Lata (350ml)</h3>
+  <p>R$ 3,00</p>
+  <button>Adicionar ao carrinho</button>
+</article>
 
-    <article class="product">
-      <img src="imagens/agua 2.jpg" alt="Água Mineral Natural Garrafa (500ml)">
-      <h3>Água Mineral Natural Garrafa (500ml)</h3>
-      <p>R$ 3,00</p>
-      <button>Adicionar ao carrinho</button>
-    </article>
+<article class="product">
+  <div class="product-image-container">
+    <img src="imagens/agua 2.jpg" alt="Água Mineral" class="product-img active" id="img3-1">
+    <img src="imagens/tabela.png" alt="Tabela Nutricional" class="product-img" id="img3-2">
+    <div class="image-switcher">
+      <span class="dot active" onclick="switchImage(1, this)"></span>
+      <span class="dot" onclick="switchImage(2, this)"></span>
+    </div>
+  </div>
+  <h3>Água Mineral Natural Garrafa (500ml)</h3>
+  <p>R$ 3,00</p>
+  <button>Adicionar ao carrinho</button>
+</article>
 
-    <article class="product">
-      <img src="imagens/aguagas.png" alt="Água Mineral com Gás Garrafa Garrafa (500ml)">
-      <h3>Água Mineral com Gás Garrafa (500ml)</h3>
-      <p>R$ 3,00</p>
-      <button>Adicionar ao carrinho</button>
-    </article>
+<article class="product">
+  <div class="product-image-container">
+    <img src="imagens/aguagas.png" alt="Água com Gás" class="product-img active" id="img4-1">
+    <img src="imagens/tabela.png" alt="Tabela Nutricional" class="product-img" id="img4-2">
+    <div class="image-switcher">
+      <span class="dot active" onclick="switchImage(1, this)"></span>
+      <span class="dot" onclick="switchImage(2, this)"></span>
+    </div>
+  </div>
+  <h3>Água Mineral com Gás Garrafa (500ml)</h3>
+  <p>R$ 3,00</p>
+  <button>Adicionar ao carrinho</button>
+</article>
 
-    <article class="product">
-      <img src="imagens/guaraviton.png" alt="Guaraviton Garrafa (500ml)">
-      <h3>Guaraviton Garrafa (500ml)</h3>
-      <p>R$ 4,00</p>
-      <button>Adicionar ao carrinho</button>
-    </article>
+<article class="product">
+  <div class="product-image-container">
+    <img src="imagens/guaraviton.png" alt="Guaraviton" class="product-img active" id="img4-1">
+    <img src="imagens/tabela.png" alt="Tabela Nutricional" class="product-img" id="img4-2">
+    <div class="image-switcher">
+      <span class="dot active" onclick="switchImage(1, this)"></span>
+      <span class="dot" onclick="switchImage(2, this)"></span>
+    </div>
+  </div>
+  <h3>Guaraviton Garrafa (500ml)</h3>
+  <p>R$ 3,00</p>
+  <button>Adicionar ao carrinho</button>
+</article>
 
-    <article class="product">
-      <img src="imagens/cafepingadocurto.png" alt="Café Curto">
-      <h3>Café Curto</h3>
-      <p>R$ 1,00</p>
-      <button>Adicionar ao carrinho</button>
-    </article>
+<!-- Cafés -->
+ <article class="product">
+  <div class="product-image-container">
+    <img src="imagens/cafepingadocurto.png" alt="Café Curto" class="product-img active" id="img4-1">
+    <img src="imagens/tabela.png" alt="Tabela Nutricional" class="product-img" id="img4-2">
+    <div class="image-switcher">
+      <span class="dot active" onclick="switchImage(1, this)"></span>
+      <span class="dot" onclick="switchImage(2, this)"></span>
+    </div>
+  </div>
+  <h3>Café Curto</h3>
+  <p>R$ 1,00</p>
+  <button>Adicionar ao carrinho</button>
+</article>
 
-    <article class="product">
-      <img src="imagens/cafepingadocurto.png" alt="Café Longo">
-      <h3>Café Longo</h3>
-      <p>R$ 1,00</p>
-      <button>Adicionar ao carrinho</button>
-    </article>
+ <article class="product">
+  <div class="product-image-container">
+  <img src="imagens/cafepingadocurto.png" alt="Café Longo" class="product-img active" id="img4-1">
+    <img src="imagens/tabela.png" alt="Tabela Nutricional" class="product-img" id="img4-2">
+    <div class="image-switcher">
+      <span class="dot active" onclick="switchImage(1, this)"></span>
+      <span class="dot" onclick="switchImage(2, this)"></span>
+    </div>
+  </div>
+  <h3>Café Longo</h3>
+  <p>R$ 1,00</p>
+  <button>Adicionar ao carrinho</button>
+</article>
 
-    <article class="product">
-      <img src="imagens/cafepingadocurto.png" alt="Café Pingado">
-      <h3>Café Pingado</h3>
-      <p>R$ 1,50</p>
-      <button>Adicionar ao carrinho</button>
-    </article>
+ <article class="product">
+  <div class="product-image-container">
+  <img src="imagens/cafepingadocurto.png" alt="Café Pingado" class="product-img active" id="img4-1">
+    <img src="imagens/tabela.png" alt="Tabela Nutricional" class="product-img" id="img4-2">
+    <div class="image-switcher">
+      <span class="dot active" onclick="switchImage(1, this)"></span>
+      <span class="dot" onclick="switchImage(2, this)"></span>
+    </div>
+  </div>
+  <h3>Café Pingado</h3>
+  <p>R$ 1,50</p>
+  <button>Adicionar ao carrinho</button>
+</article>
 
-    <article class="product">
-      <img src="imagens/cafepingadocurto.png" alt="Cappucino">
-      <h3>Cappucino</h3>
-      <p>R$ 1,50</p>
-      <button>Adicionar ao carrinho</button>
-    </article>
+ <article class="product">
+  <div class="product-image-container">
+  <img src="imagens/cafepingadocurto.png" alt="Cappuccino" class="product-img active" id="img4-1">
+    <img src="imagens/tabela.png" alt="Tabela Nutricional" class="product-img" id="img4-2">
+    <div class="image-switcher">
+      <span class="dot active" onclick="switchImage(1, this)"></span>
+      <span class="dot" onclick="switchImage(2, this)"></span>
+    </div>
+  </div>
+  <h3>Cappuccino</h3>
+  <p>R$ 1,50</p>
+  <button>Adicionar ao carrinho</button>
+</article>
 
-    <article class="product">
-      <img src="imagens/cafepingadocurto.png" alt="Cappucino com Canela">
-      <h3>Cappucino com Canela</h3>
-      <p>R$ 1,50</p>
-      <button>Adicionar ao carrinho</button>
-    </article>
+ <article class="product">
+  <div class="product-image-container">
+  <img src="imagens/cafepingadocurto.png" alt="Cappuccino com Canela" class="product-img active" id="img4-1">
+    <img src="imagens/tabela.png" alt="Tabela Nutricional" class="product-img" id="img4-2">
+    <div class="image-switcher">
+      <span class="dot active" onclick="switchImage(1, this)"></span>
+      <span class="dot" onclick="switchImage(2, this)"></span>
+    </div>
+  </div>
+  <h3>Cappuccino com Canela</h3>
+  <p>R$ 1,50</p>
+  <button>Adicionar ao carrinho</button>
+</article>
 
-    <article class="product">
-      <img src="imagens/cafepingadocurto.png" alt="Moccacino">
-      <h3>Moccacino</h3>
-      <p>R$ 1,50</p>
-      <button>Adicionar ao carrinho</button>
-    </article>
+ <article class="product">
+  <div class="product-image-container">
+  <img src="imagens/cafepingadocurto.png" alt="Moccaccino" class="product-img active" id="img4-1">
+    <img src="imagens/tabela.png" alt="Tabela Nutricional" class="product-img" id="img4-2">
+    <div class="image-switcher">
+      <span class="dot active" onclick="switchImage(1, this)"></span>
+      <span class="dot" onclick="switchImage(2, this)"></span>
+    </div>
+  </div>
+  <h3>Moccaccino</h3>
+  <p>R$ 1,50</p>
+  <button>Adicionar ao carrinho</button>
+</article>
 
-    <article class="product">
-      <img src="imagens/cafepingadocurto.png" alt="Chocolate com Leite">
-      <h3>Chocolate com Leite</h3>
-      <p>R$ 1,50</p>
-      <button>Adicionar ao carrinho</button>
-    </article>
+<!-- Chocolates -->
+ <article class="product">
+  <div class="product-image-container">
+  <img src="imagens/cafepingadocurto.png" alt="Chocolate" class="product-img active" id="img4-1">
+    <img src="imagens/tabela.png" alt="Tabela Nutricional" class="product-img" id="img4-2">
+    <div class="image-switcher">
+      <span class="dot active" onclick="switchImage(1, this)"></span>
+      <span class="dot" onclick="switchImage(2, this)"></span>
+    </div>
+  </div>
+  <h3>Chocolate</h3>
+  <p>R$ 1,50</p>
+  <button>Adicionar ao carrinho</button>
+</article>
 
-    <article class="product">
-      <img src="imagens/chalimao.png" alt="Chá de Limão">
-      <h3>Chá de Limão</h3>
-      <p>R$ 1,50</p>
-      <button>Adicionar ao carrinho</button>
-    </article>
+ <article class="product">
+  <div class="product-image-container">
+  <img src="imagens/cafepingadocurto.png" alt="Chocolate com Leite" class="product-img active" id="img4-1">
+    <img src="imagens/tabela.png" alt="Tabela Nutricional" class="product-img" id="img4-2">
+    <div class="image-switcher">
+      <span class="dot active" onclick="switchImage(1, this)"></span>
+      <span class="dot" onclick="switchImage(2, this)"></span>
+    </div>
+  </div>
+  <h3>Chocolate com Leite</h3>
+  <p>R$ 1,50</p>
+  <button>Adicionar ao carrinho</button>
+</article>
 
-    <article class="product">
-      <img src="imagens/trento 2.jpg" alt="Trento Duo">
-      <h3>Trento Duo</h3>
-      <p>R$ 3,00</p>
-      <button>Adicionar ao carrinho</button>
-    </article>
+<!-- Chá -->
+  <article class="product">
+  <div class="product-image-container">
+  <img src="imagens/chalimao.png" alt="Chá de Limão" class="product-img active" id="img4-1">
+    <img src="imagens/tabela.png" alt="Tabela Nutricional" class="product-img" id="img4-2">
+    <div class="image-switcher">
+      <span class="dot active" onclick="switchImage(1, this)"></span>
+      <span class="dot" onclick="switchImage(2, this)"></span>
+    </div>
+  </div>
+  <h3>Chá de Limão</h3>
+  <p>R$ 1,50</p>
+  <button>Adicionar ao carrinho</button>
+</article>
 
-    <article class="product">
-      <img src="imagens/trento limao.jpg" alt="Trento Torta de Limão">
-      <h3>Trento Torta de Limão</h3>
-      <p>R$ 3,00</p>
-      <button>Adicionar ao carrinho</button>
-    </article>
+<article class="product">
+  <div class="product-image-container">
+    <img src="imagens/trento 2.jpg" alt="Trento Duo" class="product-img active" id="img1-1">
+    <img src="imagens/tabela.png" alt="Tabela Nutricional" class="product-img" id="img1-2">
+    <div class="image-switcher">
+      <span class="dot active" onclick="switchImage(1, this)"></span>
+      <span class="dot" onclick="switchImage(2, this)"></span>
+    </div>
+  </div>
+  <h3>Trento Duo</h3>
+  <p>R$ 3,00</p>
+  <button>Adicionar ao carrinho</button>
+</article>
+ 
+<article class="product">
+  <div class="product-image-container">
+    <img src="imagens/trento limao.jpg" alt="Trento Torta de Limão" class="product-img active" id="img1-1">
+    <img src="imagens/tabela.png" alt="Tabela Nutricional" class="product-img" id="img1-2">
+    <div class="image-switcher">
+      <span class="dot active" onclick="switchImage(1, this)"></span>
+      <span class="dot" onclick="switchImage(2, this)"></span>
+    </div>
+  </div>
+  <h3>Trento Torta de Limão</h3>
+  <p>R$ 3,00</p>
+  <button>Adicionar ao carrinho</button>
+</article>
+  
+<article class="product">
+  <div class="product-image-container">
+    <img src="imagens/trentochocolate.png" alt="Trento Chocolate" class="product-img active" id="img1-1">
+    <img src="imagens/tabela.png" alt="Tabela Nutricional" class="product-img" id="img1-2">
+    <div class="image-switcher">
+      <span class="dot active" onclick="switchImage(1, this)"></span>
+      <span class="dot" onclick="switchImage(2, this)"></span>
+    </div>
+  </div>
+  <h3>Trento Chocolate</h3>
+  <p>R$ 3,00</p>
+  <button>Adicionar ao carrinho</button>
+</article>
 
-    <article class="product">
-      <img src="imagens/trentochocolate.png" alt="Trento Chocolate">
-      <h3>Trento Chocolate</h3>
-      <p>R$ 3,00</p>
-      <button>Adicionar ao carrinho</button>
-    </article>
+<article class="product">
+  <div class="product-image-container">
+    <img src="imagens/trakinas.png" alt="Trakinas Chocolate" class="product-img active" id="img1-1">
+    <img src="imagens/tabela.png" alt="Tabela Nutricional" class="product-img" id="img1-2">
+    <div class="image-switcher">
+      <span class="dot active" onclick="switchImage(1, this)"></span>
+      <span class="dot" onclick="switchImage(2, this)"></span>
+    </div>
+  </div>
+  <h3>Trakinas Chocolate</h3>
+  <p>R$ 4,00</p>
+  <button>Adicionar ao carrinho</button>
+</article>
 
-    <article class="product">
-      <img src="imagens/trakinas.png" alt="Trakinas Chocolate">
-      <h3>Trakinas Chocolate</h3>
-      <p>R$ 4,00</p>
-      <button>Adicionar ao carrinho</button>
-    </article>
+<article class="product">
+  <div class="product-image-container">
+    <img src="imagens/trident.png" alt="Chiclete Trident Blueberry" class="product-img active" id="img1-1">
+    <img src="imagens/tabela.png" alt="Tabela Nutricional" class="product-img" id="img1-2">
+    <div class="image-switcher">
+      <span class="dot active" onclick="switchImage(1, this)"></span>
+      <span class="dot" onclick="switchImage(2, this)"></span>
+    </div>
+  </div>
+  <h3>Chiclete Trident Blueberry</h3>
+  <p>R$ 4,00</p>
+  <button>Adicionar ao carrinho</button>
+</article>
 
-    <article class="product">
-      <img src="imagens/trident.png" alt="Chiclete Trident Blueberry">
-      <h3>Chiclete Trident Blueberry</h3>
-      <p>R$ 4,00</p>
-      <button>Adicionar ao carrinho</button>
-    </article>
+<article class="product">
+  <div class="product-image-container">
+    <img src="imagens/san.jpg" alt="Lanche Pão de Forma Presunto e Queijo" class="product-img active" id="img1-1">
+    <img src="imagens/tabela.png" alt="Tabela Nutricional" class="product-img" id="img1-2">
+    <div class="image-switcher">
+      <span class="dot active" onclick="switchImage(1, this)"></span>
+      <span class="dot" onclick="switchImage(2, this)"></span>
+    </div>
+  </div>
+  <h3>Lanche Pão de Forma Presunto e Queijo</h3>
+  <p>R$ 3,00</p>
+  <button>Adicionar ao carrinho</button>
+</article>
 
-    <article class="product">
-      <img src="imagens/lanche_de_frango-removebg-preview.png" alt="Lanche Pão de Forma Frango">
-      <h3>Lanche Pão de Forma Frango</h3>
-      <p>R$ 3,00</p>
-      <button>Adicionar ao carrinho</button>
-    </article>
-
-    <article class="product">
-      <img src="imagens/lanche_de_salame_2-removebg-preview.png" alt="Lanche Pão Ciabatta Salame">
-      <h3>Lanche Pão Ciabatta Salame</h3>
-      <p>R$ 3,00</p>
-      <button>Adicionar ao carrinho</button>
-    </article>
-
-    <article class="product">
-      <img src="imagens/san.jpg" alt="Lanche Pão de Forma Presunto e Queijo">
-      <h3>Lanche Pão de Forma Presunto e Queijo</h3>
-      <p>R$ 3,00</p>
-      <button>Adicionar ao carrinho</button>
-    </article>
-
-    <article class="product">
-      <img src="imagens/paodog.png" alt="Lanche Pão de Hot Dog">
-      <h3>Lanche Pão de Hot Dog</h3>
-      <p>R$ 3,00</p>
-      <button>Adicionar ao carrinho</button>
-    </article>
+<article class="product">
+  <div class="product-image-container">
+    <img src="imagens/lanche_de_frango-removebg-preview.png" alt="Lanche Pão de Forma Frango" class="product-img active" id="img1-1">
+    <img src="imagens/tabela.png" alt="Tabela Nutricional" class="product-img" id="img1-2">
+    <div class="image-switcher">
+      <span class="dot active" onclick="switchImage(1, this)"></span>
+      <span class="dot" onclick="switchImage(2, this)"></span>
+    </div>
+  </div>
+  <h3>Lanche Pão de Forma Frango</h3>
+  <p>R$ 3,00</p>
+  <button>Adicionar ao carrinho</button>
+</article>
+ 
+<article class="product">
+  <div class="product-image-container">
+    <img src="imagens/lanche_de_salame_2-removebg-preview.png" alt="Lanche Pão Ciabatta Salame" class="product-img active" id="img1-1">
+    <img src="imagens/tabela.png" alt="Tabela Nutricional" class="product-img" id="img1-2">
+    <div class="image-switcher">
+      <span class="dot active" onclick="switchImage(1, this)"></span>
+      <span class="dot" onclick="switchImage(2, this)"></span>
+    </div>
+  </div>
+  <h3>Lanche Pão Ciabatta Salame</h3>
+  <p>R$ 3,00</p>
+  <button>Adicionar ao carrinho</button>
+</article>
+  
+<article class="product">
+  <div class="product-image-container">
+    <img src="imagens/paodog.png" alt="Lanche Pão de Hot Dog" class="product-img active" id="img1-1">
+    <img src="imagens/tabela.png" alt="Tabela Nutricional" class="product-img" id="img1-2">
+    <div class="image-switcher">
+      <span class="dot active" onclick="switchImage(1, this)"></span>
+      <span class="dot" onclick="switchImage(2, this)"></span>
+    </div>
+  </div>
+  <h3>Lanche Pão de Hot Dog</h3>
+  <p>R$ 3,00</p>
+  <button>Adicionar ao carrinho</button>
+</article>
 
   </main>
 
+<div id="menu-lateral" class="menu-lateral">
+    <div id="botao-toggle" class="botao-toggle" onclick="alternarMenu()">
+        <span id="texto-localizacao">Sua Localização</span>
+        <span id="seta"><i class="fas fa-chevron-left"></i></span>
+    </div>
+    <div id="localizacoes" class="localizacoes">
+        <ul>
+            <li onclick="selecionarLocalizacao('Senac Lapa Tito')">Senac Lapa Tito</li>
+            <li onclick="selecionarLocalizacao('Senac Francisco Matarazzo')">Senac Francisco Matarazzo</li>
+            <li onclick="selecionarLocalizacao('Senac Aclimação')">Senac Aclimação</li>
+            <li onclick="selecionarLocalizacao('Senac Santo Amaro')">Senac Santo Amaro</li>
+        </ul>
+    </div>
+    <div id="localizacao-selecionada" class="localizacao-selecionada"></div>
+</div>
   <!-- :::::::::::::::::::::: RODAPÉ :::::::::::::::::::::: -->
-  <footer id="footer" class="text-center text-sm py-4 bg-slate-900 text-white" style="position: fixed; bottom: 0; width: 100%">
+  <footer
+    id="footer" class="text-center text-sm py-4 bg-slate-900 text-white" style="position: fixed; bottom: 0; width: 100%">
     ©2025 Senac. Todos os direitos reservados.
   </footer>
-
-  <script src="JS/senhac.js"></script>
 
 </body>
 </html>

@@ -18,14 +18,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $hashed_password = $usuarioEncontrado['senha'];
         // Verifica a senha usando password_verify (supondo que as senhas estejam hashadas)
         if (password_verify($senhausuario, $hashed_password)) {
-            // Armazena dados do usuário na sessão
-            $_SESSION['id_usuario'] = $usuarioEncontrado['id_usuario'];
-            $_SESSION['nome_usuario'] = $usuarioEncontrado['nome_usuario'];
-            $_SESSION['email'] = $usuarioEncontrado['email'];
-            $_SESSION['foto'] = $usuarioEncontrado['foto'] ?? 'imagens/default-profile.png';
+            // Armazena dados do usuário na sessão dentro de um array 'usuario'
+            $_SESSION['usuario'] = [
+                'id' => $usuarioEncontrado['id_usuario'],
+                'nome' => $usuarioEncontrado['nome_usuario'],
+                'email' => $usuarioEncontrado['email'],
+                'foto' => !empty($usuarioEncontrado['foto']) ? $usuarioEncontrado['foto'] : 'imagens/default-profile.png'
+            ];
 
-            // Redireciona para página principal (aqui coloquei sobrenos.html conforme seu código)
-            header('Location: sobrenos.html');
+            // Redireciona para página principal (sobrenos.php)
+            header('Location: sobrenos.php');
             exit();
         } else {
             // Senha inválida
@@ -38,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit();
     }
 } else {
-    // Caso o script seja acessado por GET ou outro método, redireciona para a página de login
+    // Redireciona para a página de login caso acesse por GET ou outro método
     header('Location: index2.php');
     exit();
 }

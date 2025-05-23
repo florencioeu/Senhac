@@ -12,10 +12,10 @@
                 <h2>Erro no Login</h2>
                 <p>Email ou senha inválidos. Tente novamente.</p>
                 <button class="btn" onclick="window.location.href='index2.php'">
-                <span class="btn-text-one">Voltar para Login</span>
-                <span class="btn-text-two">Voltar para Login</span>
+                  <span class="btn-text-one">Voltar para Login</span>
+                  <span class="btn-text-two">Voltar para Login</span>
                 </button>
-        </div>
+            </div>
     </div>
 </body>
 </html>

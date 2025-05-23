@@ -5,9 +5,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Bebidas</title>
+  <script src="JS/carrinho.js" defer></script>
+  <script src="JS/senhac.js"></script> 
+  <script src="JS/banco_pedidos.js"></script>
   <link rel="stylesheet" href="css/senhac.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
-  <script src="roleta.js"></script>
 </head>
 <body class="light-theme">
 
@@ -49,14 +51,21 @@
 
 <div id="infoBar" class="info-bar" style="position: fixed; top: 76px; width: 100%; z-index: 1000">
   <ul class="menu-center">
-    <li><a href="Sobrenos.html">Início</a></li>
+    <li><a href="sobrenos.php">Início</a></li>
     <li><a href="Bebidas.html">Bebidas</a></li>
     <li><a href="Lanches.html">Lanches</a></li>
     <li><a href="Doces.html">Doces</a></li>
     <li><a href="Ofertas.html">Ofertas</a></li>
     <li><a href="Todos.html">Todos os Itens</a></li>
+    <li><a href="meus-pedidos.html">Meus Pedidos</a></li>
   </ul>
 </div>
+
+<div id="side-menu" class="side-menu">
+  <div id="toggle-button" class="toggle-button" onclick="toggleMenu()">
+  <span id="location-text">Sua Localização</span>
+  
+  <span id="arrow"><i class="fas fa-chevron-left"></i></span>
 
 <main id="page-wrapper" class="container" style="padding-top: 116px;">
 
@@ -261,6 +270,22 @@
 </article>
 
 </main>
+
+<div id="menu-lateral" class="menu-lateral">
+  <div id="botao-toggle" class="botao-toggle" onclick="alternarMenu()">
+      <span id="texto-localizacao">Sua Localização</span>
+      <span id="seta"><i class="fas fa-chevron-left"></i></span>
+  </div>
+  <div id="localizacoes" class="localizacoes">
+      <ul>
+          <li onclick="selecionarLocalizacao('Senac Lapa Tito')">Senac Lapa Tito</li>
+          <li onclick="selecionarLocalizacao('Senac Francisco Matarazzo')">Senac Francisco Matarazzo</li>
+          <li onclick="selecionarLocalizacao('Senac Aclimação')">Senac Aclimação</li>
+          <li onclick="selecionarLocalizacao('Senac Santo Amaro')">Senac Santo Amaro</li>
+      </ul>
+  </div>
+  <div id="localizacao-selecionada" class="localizacao-selecionada"></div>
+</div>
 
 <footer id="footer" class="text-center text-sm py-4 bg-slate-900 text-white" style="position: fixed; bottom: 0; width: 100%">
   ©2025 Senac. Todos os direitos reservados.
