@@ -482,7 +482,6 @@ footer {
   /* Links do menu no mobile */
   .menu-center a {
     padding: 12px 20px;
-    border-bottom: none;
     font-size: 1.1em;
   }
 
